@@ -66,8 +66,9 @@ the paths, the web server, the PHP version, and the installed tools. A script
 here is not portable, and it writes outside the repo. Read the assumptions
 first, then change the script.
 
-Never run a script from this repo against your own machine to test a change. The
-scripts write to `/var/www`, to the Nginx configuration, and to the hosts file.
+The scripts write to `/var/www`, to the Nginx configuration, and to the hosts
+file. Never run a script from this repo against your own machine to test a
+change.
 
 ## CI
 

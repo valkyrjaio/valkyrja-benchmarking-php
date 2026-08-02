@@ -1,3 +1,8 @@
+# Benchmark Results
+
+The raw `ab` output of one `./benchmarks.sh` run.
+
+```text
 ubuntu@ip-000:/var/www$ ./benchmarks.sh
 This is ApacheBench, Version 2.3 <$Revision: 1706008 $>
 Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
@@ -346,3 +351,4 @@ Percentage of the requests served within a certain time (ms)
   98%     28
   99%     29
  100%    305 (longest request)
+```

@@ -50,7 +50,8 @@ it. Ignore the framework-specific sections of the canonical guide:
   run the benchmark across every framework. `restart-services.sh` restarts the
   services.
 - **`benchmarking/libs/output.php`** — the output helper.
-- **`.github/ci/copyright-header/check.sh`** — the copyright header check.
+- **`.github/ci/copyright-header/config`** — the package identifier and the
+  excluded files that the copyright header check reads.
 - **`RESULTS.md`** — the recorded results.
 
 Each framework directory repeats the same six file names. A change to a step in
@@ -110,16 +111,20 @@ A file that holds no program code carries no header. A document, a workflow, and
 a configuration file are such files. Each `nginx.conf` and `laravel/config/.env`
 carry none.
 
-`.github/ci/copyright-header/check.sh` enforces the rule, and `ci.yml` runs it.
-The check reads every tracked file, and it requires the header in each file that
-the `EXCLUDED` list in the script does not match. Warning: a new file fails the
-check until a person acts. Add the header to the file, or add the file to
-`EXCLUDED` when the file holds no program code. Run the check before you open the
-pull request:
+The `_copyright-header-check.yml` workflow in the `.github` repo enforces the
+rule, and the `copyright-header-check` job in `ci.yml` calls it. The check reads
+every tracked file, and it requires the header in each file that the `EXCLUDED`
+list does not match. This repo states only what is its own, in
+`.github/ci/copyright-header/config`: the `IDENTIFIER`, and the `EXCLUDED` array.
+The `.github` repo holds the check itself, so every repo in the organization runs
+one implementation.
 
-```bash
-./.github/ci/copyright-header/check.sh
-```
+Warning: a new file fails the check until a person acts. Add the header to the
+file, or add the file to `EXCLUDED` when the file holds no program code. The
+`config` file is a tracked file too, so it carries the header as a line comment.
+
+Warning: the check reads `git ls-files`, so an untracked file is invisible to it.
+Stage a new file before you expect the check to see it.
 
 ## CI
 

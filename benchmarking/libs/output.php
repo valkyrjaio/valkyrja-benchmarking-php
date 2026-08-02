@@ -1,5 +1,13 @@
 <?php
 
+/*
+ * This file is part of the Valkyrja Benchmarking package.
+ *
+ * Copyright (c) 2016-present Melech Mizrachi
+ *
+ * Released under the MIT License. See LICENSE.md for details.
+ */
+
 // Only run if needed
 if (isset($_GET['benchmark'])) {
     $memory = memory_get_peak_usage();

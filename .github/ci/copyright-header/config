@@ -1,0 +1,28 @@
+#
+# This file is part of the Valkyrja Benchmarking package.
+#
+# Copyright (c) 2016-present Melech Mizrachi
+#
+# Released under the MIT License. See LICENSE.md for details.
+#
+
+# The package this repository is. COPYRIGHT_HEADER.md in the .github repository
+# maps every repository to its own identifier.
+IDENTIFIER='Valkyrja Benchmarking'
+
+# The files that carry no copyright header. Every other tracked file must carry
+# it, so a new file fails the check until a person adds the header or adds the
+# file here.
+EXCLUDED=(
+    # A document and a workflow hold no program code.
+    '*.md'
+    '*.yml'
+    '.gitignore'
+
+    # The server configuration that each framework directory holds. Nginx reads
+    # the file, and this repository copies it to the server.
+    '*/nginx.conf'
+
+    # The environment file that Laravel reads. It holds settings, not code.
+    'laravel/config/.env'
+)

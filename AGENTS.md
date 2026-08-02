@@ -41,7 +41,9 @@ it. Ignore the framework-specific sections of the canonical guide:
 - **One directory per framework** — `valkyrja/`, `laravel/`, `symfony/`,
   `slim/`, `lumen/`, `silex/`, `codeigniter/`, and `zend/`. Each directory holds
   that framework's `install.sh`, `setup.sh`, `warmup.sh`, `benchmarks.sh`,
-  `benchmarks-output.sh`, and `nginx.conf`.
+  `benchmarks-output.sh`, and `nginx.conf`. Two directories hold more than that
+  set: `valkyrja/routes/` holds `default.php`, and `laravel/config/` holds
+  `.env`.
 - **The top-level scripts** — `install.sh` and `install-server.sh` prepare the
   server. `setup.sh`, `warmup.sh`, `benchmarks.sh`, and `benchmarks-output.sh`
   run the benchmark across every framework. `restart-services.sh` restarts the
@@ -49,9 +51,13 @@ it. Ignore the framework-specific sections of the canonical guide:
 - **`benchmarking/libs/output.php`** — the output helper.
 - **`RESULTS.md`** — the recorded results.
 
-Each framework directory repeats the same script names. A change to a step in
+Each framework directory repeats the same six file names. A change to a step in
 one framework usually needs the same change in every other framework. Keep the
 set consistent.
+
+A framework directory is not always interchangeable with another one. The
+`routes/` directory and the `config/` directory above are the exception, and
+only one framework reads each of them.
 
 ## Warning — read the assumptions before you change a script
 
@@ -60,8 +66,9 @@ the paths, the web server, the PHP version, and the installed tools. A script
 here is not portable, and it writes outside the repo. Read the assumptions
 first, then change the script.
 
-Never run a script from this repo against your own machine to test a change. The
-scripts write to `/var/www`, to the Nginx configuration, and to the hosts file.
+The scripts write to `/var/www`, to the Nginx configuration, and to the hosts
+file. Never run a script from this repo against your own machine to test a
+change.
 
 ## CI
 

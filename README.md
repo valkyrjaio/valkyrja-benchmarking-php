@@ -27,7 +27,7 @@ Note: If you choose to use "install-server.sh" there is one major assumption; Yo
 
 Using this project is quite simple. Follow these steps:
 
-1. Install this repo into your server via "git clone https://github.com/valkyrjaio/benchmark.git /var/www"
+1. Install this repo into your server via "git clone https://github.com/valkyrjaio/valkyrja-benchmarking-php.git /var/www"
 2. Run "./install.sh" OR "./install-server.sh" depending on your server meeting the aforementioned assumptions.
 3. Run "./warmup.sh" to warmup the opcache and get the best results.
 4. At this stage it is recommended you check the Nginx error log to ensure everything was setup properly and running appropriately "cat /var/log/nginx/error.log"

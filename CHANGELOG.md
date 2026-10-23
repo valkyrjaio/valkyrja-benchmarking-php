@@ -1,6 +1,10 @@
 # Release Notes for 26.x
 
-## [Unreleased](https://github.com/valkyrjaio/valkyrja-benchmarking-php/compare/v26.0.2...26.x)
+## [Unreleased](https://github.com/valkyrjaio/valkyrja-benchmarking-php/compare/v26.0.3...26.x)
+
+## [v26.0.3](https://github.com/valkyrjaio/valkyrja-benchmarking-php/compare/v26.0.2...v26.0.3) - 2026-10-23
+
+* [Workflow] ci: Update .github workflow refs to v26.26.3 by [@valkyrja-volundr](https://github.com/valkyrja-volundr)[bot] in https://github.com/valkyrjaio/valkyrja-benchmarking-php/pull/69
 
 ## [v26.0.2](https://github.com/valkyrjaio/valkyrja-benchmarking-php/compare/v26.0.1...v26.0.2) - 2026-10-09
 
